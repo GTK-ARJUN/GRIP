@@ -1,2 +1,0 @@
-streamlit==0.72.0
-joblib==0.17.0
