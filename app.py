@@ -4,12 +4,12 @@ import sklearn
 import webbrowser
 
 
-st.title('Deployed model')
 option=['Supervised', 'Unsupervised', 'Decision tree Classifier']
-x=st.sidebar.selectbox('Select model', options=option)
+x=st.sidebar.selectbox('Select machine learning type\model', options=option)
 
 def supervised():
-    st.subheader(option[0])
+    st.header(option[0])
+    st.subheader('To predict the percentage of an student based on the no. of study hours.')
     if st.sidebar.button('code'):
         webbrowser.open_new_tab('https://bit.ly/37P3RJ0')
     model = joblib.load('modjob.pkl')
@@ -24,6 +24,8 @@ def supervised():
     st.write(f'Student studying for {x_input} hours will get marks around {y_predicted} %')
 
 def unsupervised():
+    st.header(option[1])
+    st.subheader('Predict the optimum number of clusters and to predict the group for given sample')
     st.subheader("Enter the details below")
     st.sidebar.image('iris.png',width=280,
                     caption='Iris-flower')
@@ -40,6 +42,8 @@ def unsupervised():
     st.write(cluster_class)
 
 def Decision_tree_Classifier():
+    st.header(option[2])
+    st.subheader('To classify given data of iris using Decisiontree')
     st.subheader("Enter the details below")
     st.sidebar.image('iris.png',width=280,
         caption='Iris-flower')
