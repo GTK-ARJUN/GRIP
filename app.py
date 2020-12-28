@@ -11,7 +11,7 @@ def supervised():
     st.header(option[0])
     st.subheader('To predict the percentage of an student based on the no. of study hours.')
     if st.sidebar.button('code'):
-        webbrowser.open_new_tab('https://bit.ly/37P3RJ0')
+        webbrowser.open('https://bit.ly/37P3RJ0')
     model = joblib.load('modjob.pkl')
     x_input = round(st.number_input('Enter the study time in hours'), 2)
     y_predicted = model.predict([[x_input]]).ravel()
