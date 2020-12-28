@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import sklearn
+import webbrowser
 
 
 st.title('Deployed model')
@@ -8,8 +9,9 @@ option=['Supervised', 'Unsupervised', 'Decision tree Classifier']
 x=st.sidebar.selectbox('Select model', options=option)
 
 def supervised():
-    st.beta_container()
     st.subheader(option[0])
+    if st.sidebar.button('code'):
+        webbrowser.open_new_tab('https://bit.ly/37P3RJ0')
     model = joblib.load('modjob.pkl')
     x_input = round(st.number_input('Enter the study time in hours'), 2)
     y_predicted = model.predict([[x_input]]).ravel()
@@ -25,6 +27,8 @@ def unsupervised():
     st.subheader("Enter the details below")
     st.sidebar.image('iris.png',width=280,
                     caption='Iris-flower')
+    if st.sidebar.button('code'):
+        webbrowser.open_new_tab('https://bit.ly/3gsrXxl')
     mms = joblib.load('mms_iris_scale.pkl')
     model = joblib.load('iris_pred.pkl')
     sl = st.number_input('Sepal Length (Range 4.3 - 7.9)')
@@ -39,6 +43,10 @@ def Decision_tree_Classifier():
     st.subheader("Enter the details below")
     st.sidebar.image('iris.png',width=280,
         caption='Iris-flower')
+    if st.sidebar.button('code'):
+        webbrowser.open_new_tab('https://bit.ly/3mWu4fa')
+
+
     target_enc=joblib.load('iris_target_enc.pkl')
     model=joblib.load('iris_dtree_clf.pkl')
     sl = st.number_input('Sepal Length (Range 4.3 - 7.9)')
