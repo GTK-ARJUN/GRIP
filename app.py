@@ -9,7 +9,7 @@ x=st.sidebar.selectbox('Select machine learning type\model', options=option)
 
 def supervised():
     st.header(option[0])
-    st.subheader('To predict the percentage of an student based on the no. of study hours.')
+    st.subheader('To predict the percentage of an student depending on study hours study hours.')
     if st.sidebar.button('code'):
         webbrowser.open_new_tab('https://bit.ly/37P3RJ0')
     model = joblib.load('modjob.pkl')
