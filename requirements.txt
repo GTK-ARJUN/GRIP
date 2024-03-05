@@ -1,4 +1,0 @@
-streamlit==1.11.1
-joblib==1.2.0
-scikit_learn==0.24.1
-webbrowser
